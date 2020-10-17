@@ -24,6 +24,11 @@ class ViewController: UIViewController, ViewControllerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.backgroundColor = .white
+    }
+    
     //MARK: -
     //MARK: - VIEWCONTROLLER DELEGATE
     func prepareViews() {}

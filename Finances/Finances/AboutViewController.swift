@@ -11,10 +11,10 @@ import UIKit
 
 class AboutViewController: ViewController {
     
-    var stackView: UIStackView!
-    var logoImageView: UIImageView!
-    var textLabel: UILabel!
-    var versionLabel: UILabel!
+    private var stackView: UIStackView!
+    private var logoImageView: UIImageView!
+    private var textLabel: UILabel!
+    private var versionLabel: UILabel!
     
     override func prepareViews() {
         stackView = .init()
@@ -47,7 +47,6 @@ class AboutViewController: ViewController {
     }
     
     override func configureViews() {
-        view.backgroundColor = .white
         configureStackView()
         configureImageView()
         configureLabels()

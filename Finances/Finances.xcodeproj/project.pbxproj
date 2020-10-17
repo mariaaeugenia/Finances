@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5466AC3A253A523F00B852D7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5466AC39253A523F00B852D7 /* TableViewCell.swift */; };
+		54868680253B84DD00A70E39 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5486867F253B84DD00A70E39 /* Settings.bundle */; };
+		54868685253B855A00A70E39 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54868684253B855A00A70E39 /* Constants.swift */; };
+		5486868E253B98C900A70E39 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486868D253B98C900A70E39 /* Annotation.swift */; };
 		54D08729253A4C6300C16D7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D08728253A4C6300C16D7C /* AppDelegate.swift */; };
 		54D0872D253A4C6300C16D7C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D0872C253A4C6300C16D7C /* MainViewController.swift */; };
 		54D08733253A4C6300C16D7C /* Finances.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54D08731253A4C6300C16D7C /* Finances.xcdatamodeld */; };
@@ -54,6 +57,9 @@
 		3135E6E64C744934CE2C1BFB /* Pods_Finances_FinancesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finances_FinancesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4834CFFD007E5102480A7299 /* Pods-FinancesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancesTests.release.xcconfig"; path = "Target Support Files/Pods-FinancesTests/Pods-FinancesTests.release.xcconfig"; sourceTree = "<group>"; };
 		5466AC39253A523F00B852D7 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5486867F253B84DD00A70E39 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		54868684253B855A00A70E39 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5486868D253B98C900A70E39 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		54D08725253A4C6300C16D7C /* Finances.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finances.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D08728253A4C6300C16D7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54D0872C253A4C6300C16D7C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5486867E253B84C300A70E39 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5486867F253B84DD00A70E39 /* Settings.bundle */,
+				54868684253B855A00A70E39 /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5486868C253B98BB00A70E39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5486868D253B98C900A70E39 /* Annotation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		54D0871C253A4C6300C16D7C = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +159,8 @@
 		54D08727253A4C6300C16D7C /* Finances */ = {
 			isa = PBXGroup;
 			children = (
+				5486868C253B98BB00A70E39 /* Model */,
+				5486867E253B84C300A70E39 /* Resources */,
 				54F9986E253B718600349BC6 /* Extensions */,
 				54D0877B253A515D00C16D7C /* AbstractClasses */,
 				54D08728253A4C6300C16D7C /* AppDelegate.swift */,
@@ -323,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54D08738253A4C6400C16D7C /* LaunchScreen.storyboard in Resources */,
+				54868680253B84DD00A70E39 /* Settings.bundle in Resources */,
 				54D08735253A4C6400C16D7C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +482,8 @@
 				54D08733253A4C6300C16D7C /* Finances.xcdatamodeld in Sources */,
 				54D0872D253A4C6300C16D7C /* MainViewController.swift in Sources */,
 				54F998C2253B73F300349BC6 /* UIApplication+Extensions.swift in Sources */,
+				54868685253B855A00A70E39 /* Constants.swift in Sources */,
+				5486868E253B98C900A70E39 /* Annotation.swift in Sources */,
 				5466AC3A253A523F00B852D7 /* TableViewCell.swift in Sources */,
 				54D08729253A4C6300C16D7C /* AppDelegate.swift in Sources */,
 				54D0877D253A517800C16D7C /* ViewController.swift in Sources */,
@@ -634,6 +662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Finances/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -653,6 +682,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Finances/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
