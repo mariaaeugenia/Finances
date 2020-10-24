@@ -11,7 +11,7 @@ class SettingsViewController: ViewController {
     
     private var dollarStackView: UIStackView!
     private var dollarLabel: UILabel!
-    private var dollarValueTextField: UITextField!
+    private var dollarValueTextField: TextField!
     
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,7 +69,5 @@ class SettingsViewController: ViewController {
         dollarValueTextField.text = Constants.Settings.dollarCurrency
         dollarValueTextField.textAlignment = .right
         dollarValueTextField.keyboardType = .decimalPad
-        dollarValueTextField.borderStyle = .roundedRect
-        dollarValueTextField.textColor = .black
     }
 }

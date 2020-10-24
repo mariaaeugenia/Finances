@@ -11,6 +11,8 @@
 		54868680253B84DD00A70E39 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5486867F253B84DD00A70E39 /* Settings.bundle */; };
 		54868685253B855A00A70E39 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54868684253B855A00A70E39 /* Constants.swift */; };
 		5486868E253B98C900A70E39 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486868D253B98C900A70E39 /* Annotation.swift */; };
+		54868695253FA5CC00A70E39 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54868694253FA5CC00A70E39 /* ListCell.swift */; };
+		5486869B2543B21F00A70E39 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486869A2543B21F00A70E39 /* TableViewController.swift */; };
 		54D08729253A4C6300C16D7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D08728253A4C6300C16D7C /* AppDelegate.swift */; };
 		54D0872D253A4C6300C16D7C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D0872C253A4C6300C16D7C /* MainViewController.swift */; };
 		54D08733253A4C6300C16D7C /* Finances.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54D08731253A4C6300C16D7C /* Finances.xcdatamodeld */; };
@@ -20,6 +22,11 @@
 		54D0874E253A4C6400C16D7C /* FinancesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D0874D253A4C6400C16D7C /* FinancesUITests.swift */; };
 		54D0877D253A517800C16D7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D0877C253A517800C16D7C /* ViewController.swift */; };
 		54D08785253A51BE00C16D7C /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D08784253A51BE00C16D7C /* ViewControllerDelegate.swift */; };
+		54F7F8BF2544BEF80008F778 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8BE2544BEF80008F778 /* ListViewModel.swift */; };
+		54F7F8C62544BF320008F778 /* ListViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8C52544BF320008F778 /* ListViewPresentable.swift */; };
+		54F7F8EB2544C9AC0008F778 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8EA2544C9AC0008F778 /* ListCellViewModel.swift */; };
+		54F7F8F52544CF220008F778 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8F42544CF220008F778 /* NewItemViewController.swift */; };
+		54F7F8FD2544CF590008F778 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8FC2544CF590008F778 /* TextField.swift */; };
 		54F99852253B6C8D00349BC6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F99851253B6C8D00349BC6 /* ListViewController.swift */; };
 		54F9985A253B6D4B00349BC6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F99859253B6D4B00349BC6 /* MapViewController.swift */; };
 		54F9985F253B6D9200349BC6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9985E253B6D9200349BC6 /* SettingsViewController.swift */; };
@@ -60,6 +67,8 @@
 		5486867F253B84DD00A70E39 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		54868684253B855A00A70E39 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5486868D253B98C900A70E39 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		54868694253FA5CC00A70E39 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		5486869A2543B21F00A70E39 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		54D08725253A4C6300C16D7C /* Finances.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finances.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D08728253A4C6300C16D7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54D0872C253A4C6300C16D7C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +84,11 @@
 		54D0874F253A4C6400C16D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D0877C253A517800C16D7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		54D08784253A51BE00C16D7C /* ViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegate.swift; sourceTree = "<group>"; };
+		54F7F8BE2544BEF80008F778 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		54F7F8C52544BF320008F778 /* ListViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewPresentable.swift; sourceTree = "<group>"; };
+		54F7F8EA2544C9AC0008F778 /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
+		54F7F8F42544CF220008F778 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		54F7F8FC2544CF590008F778 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		54F99851253B6C8D00349BC6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		54F99859253B6D4B00349BC6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		54F9985E253B6D9200349BC6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +148,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		54868692253FA59F00A70E39 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				54F7F8C42544BF1F0008F778 /* Protocol */,
+				54868693253FA5B800A70E39 /* Cell */,
+				54F7F8C32544BEFD0008F778 /* ViewModel */,
+				54F99851253B6C8D00349BC6 /* ListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		54868693253FA5B800A70E39 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				54868694253FA5CC00A70E39 /* ListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		54D0871C253A4C6300C16D7C = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +198,8 @@
 				54D0877B253A515D00C16D7C /* AbstractClasses */,
 				54D08728253A4C6300C16D7C /* AppDelegate.swift */,
 				54D0872C253A4C6300C16D7C /* MainViewController.swift */,
-				54F99851253B6C8D00349BC6 /* ListViewController.swift */,
+				54868692253FA59F00A70E39 /* List */,
+				54F7F8F22544CF090008F778 /* NewItem */,
 				54F99859253B6D4B00349BC6 /* MapViewController.swift */,
 				54F9985E253B6D9200349BC6 /* SettingsViewController.swift */,
 				54F99869253B6DF500349BC6 /* AboutViewController.swift */,
@@ -198,11 +232,46 @@
 		54D0877B253A515D00C16D7C /* AbstractClasses */ = {
 			isa = PBXGroup;
 			children = (
-				54D0877C253A517800C16D7C /* ViewController.swift */,
 				54D08784253A51BE00C16D7C /* ViewControllerDelegate.swift */,
+				54D0877C253A517800C16D7C /* ViewController.swift */,
+				5486869A2543B21F00A70E39 /* TableViewController.swift */,
 				5466AC39253A523F00B852D7 /* TableViewCell.swift */,
+				54F7F8FC2544CF590008F778 /* TextField.swift */,
 			);
 			path = AbstractClasses;
+			sourceTree = "<group>";
+		};
+		54F7F8C32544BEFD0008F778 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				54F7F8EA2544C9AC0008F778 /* ListCellViewModel.swift */,
+				54F7F8BE2544BEF80008F778 /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		54F7F8C42544BF1F0008F778 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				54F7F8C52544BF320008F778 /* ListViewPresentable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		54F7F8F22544CF090008F778 /* NewItem */ = {
+			isa = PBXGroup;
+			children = (
+				54F7F8F32544CF110008F778 /* View */,
+			);
+			path = NewItem;
+			sourceTree = "<group>";
+		};
+		54F7F8F32544CF110008F778 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54F7F8F42544CF220008F778 /* NewItemViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		54F9986E253B718600349BC6 /* Extensions */ = {
@@ -477,20 +546,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F7F8EB2544C9AC0008F778 /* ListCellViewModel.swift in Sources */,
 				54D08785253A51BE00C16D7C /* ViewControllerDelegate.swift in Sources */,
+				54F7F8FD2544CF590008F778 /* TextField.swift in Sources */,
 				54F99872253B719700349BC6 /* StackView+Extensions.swift in Sources */,
 				54D08733253A4C6300C16D7C /* Finances.xcdatamodeld in Sources */,
 				54D0872D253A4C6300C16D7C /* MainViewController.swift in Sources */,
 				54F998C2253B73F300349BC6 /* UIApplication+Extensions.swift in Sources */,
 				54868685253B855A00A70E39 /* Constants.swift in Sources */,
 				5486868E253B98C900A70E39 /* Annotation.swift in Sources */,
+				5486869B2543B21F00A70E39 /* TableViewController.swift in Sources */,
 				5466AC3A253A523F00B852D7 /* TableViewCell.swift in Sources */,
 				54D08729253A4C6300C16D7C /* AppDelegate.swift in Sources */,
 				54D0877D253A517800C16D7C /* ViewController.swift in Sources */,
 				54F99852253B6C8D00349BC6 /* ListViewController.swift in Sources */,
+				54868695253FA5CC00A70E39 /* ListCell.swift in Sources */,
 				54F9985A253B6D4B00349BC6 /* MapViewController.swift in Sources */,
+				54F7F8BF2544BEF80008F778 /* ListViewModel.swift in Sources */,
 				54F9986A253B6DF500349BC6 /* AboutViewController.swift in Sources */,
 				54F998C7253B827800349BC6 /* UIColor+Extensions.swift in Sources */,
+				54F7F8F52544CF220008F778 /* NewItemViewController.swift in Sources */,
+				54F7F8C62544BF320008F778 /* ListViewPresentable.swift in Sources */,
 				54F9985F253B6D9200349BC6 /* SettingsViewController.swift in Sources */,
 				54F99871253B719700349BC6 /* UIView+Extensions.swift in Sources */,
 			);
