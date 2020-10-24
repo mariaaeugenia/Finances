@@ -24,9 +24,11 @@
 		54D08785253A51BE00C16D7C /* ViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D08784253A51BE00C16D7C /* ViewControllerDelegate.swift */; };
 		54F7F8BF2544BEF80008F778 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8BE2544BEF80008F778 /* ListViewModel.swift */; };
 		54F7F8C62544BF320008F778 /* ListViewPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8C52544BF320008F778 /* ListViewPresentable.swift */; };
-		54F7F8EB2544C9AC0008F778 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8EA2544C9AC0008F778 /* ListCellViewModel.swift */; };
 		54F7F8F52544CF220008F778 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8F42544CF220008F778 /* NewItemViewController.swift */; };
 		54F7F8FD2544CF590008F778 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8FC2544CF590008F778 /* TextField.swift */; };
+		54F7F90A2544E0BF0008F778 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F8EA2544C9AC0008F778 /* ItemModel.swift */; };
+		54F7F9212544E1CB0008F778 /* NewItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F90E2544E14D0008F778 /* NewItemViewModel.swift */; };
+		54F7F9272544E21C0008F778 /* NewItemPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7F9262544E21C0008F778 /* NewItemPresentable.swift */; };
 		54F99852253B6C8D00349BC6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F99851253B6C8D00349BC6 /* ListViewController.swift */; };
 		54F9985A253B6D4B00349BC6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F99859253B6D4B00349BC6 /* MapViewController.swift */; };
 		54F9985F253B6D9200349BC6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9985E253B6D9200349BC6 /* SettingsViewController.swift */; };
@@ -86,9 +88,11 @@
 		54D08784253A51BE00C16D7C /* ViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegate.swift; sourceTree = "<group>"; };
 		54F7F8BE2544BEF80008F778 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		54F7F8C52544BF320008F778 /* ListViewPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewPresentable.swift; sourceTree = "<group>"; };
-		54F7F8EA2544C9AC0008F778 /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
+		54F7F8EA2544C9AC0008F778 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		54F7F8F42544CF220008F778 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		54F7F8FC2544CF590008F778 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		54F7F90E2544E14D0008F778 /* NewItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewModel.swift; sourceTree = "<group>"; };
+		54F7F9262544E21C0008F778 /* NewItemPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemPresentable.swift; sourceTree = "<group>"; };
 		54F99851253B6C8D00349BC6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		54F99859253B6D4B00349BC6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		54F9985E253B6D9200349BC6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				5486868D253B98C900A70E39 /* Annotation.swift */,
+				54F7F8EA2544C9AC0008F778 /* ItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,7 +249,6 @@
 		54F7F8C32544BEFD0008F778 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				54F7F8EA2544C9AC0008F778 /* ListCellViewModel.swift */,
 				54F7F8BE2544BEF80008F778 /* ListViewModel.swift */,
 			);
 			path = ViewModel;
@@ -261,6 +265,8 @@
 		54F7F8F22544CF090008F778 /* NewItem */ = {
 			isa = PBXGroup;
 			children = (
+				54F7F9252544E20C0008F778 /* Protocol */,
+				54F7F91A2544E1520008F778 /* ViewModel */,
 				54F7F8F32544CF110008F778 /* View */,
 			);
 			path = NewItem;
@@ -272,6 +278,22 @@
 				54F7F8F42544CF220008F778 /* NewItemViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		54F7F91A2544E1520008F778 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				54F7F90E2544E14D0008F778 /* NewItemViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		54F7F9252544E20C0008F778 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				54F7F9262544E21C0008F778 /* NewItemPresentable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		54F9986E253B718600349BC6 /* Extensions */ = {
@@ -546,13 +568,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54F7F8EB2544C9AC0008F778 /* ListCellViewModel.swift in Sources */,
 				54D08785253A51BE00C16D7C /* ViewControllerDelegate.swift in Sources */,
 				54F7F8FD2544CF590008F778 /* TextField.swift in Sources */,
 				54F99872253B719700349BC6 /* StackView+Extensions.swift in Sources */,
 				54D08733253A4C6300C16D7C /* Finances.xcdatamodeld in Sources */,
 				54D0872D253A4C6300C16D7C /* MainViewController.swift in Sources */,
 				54F998C2253B73F300349BC6 /* UIApplication+Extensions.swift in Sources */,
+				54F7F9272544E21C0008F778 /* NewItemPresentable.swift in Sources */,
 				54868685253B855A00A70E39 /* Constants.swift in Sources */,
 				5486868E253B98C900A70E39 /* Annotation.swift in Sources */,
 				5486869B2543B21F00A70E39 /* TableViewController.swift in Sources */,
@@ -561,12 +583,14 @@
 				54D0877D253A517800C16D7C /* ViewController.swift in Sources */,
 				54F99852253B6C8D00349BC6 /* ListViewController.swift in Sources */,
 				54868695253FA5CC00A70E39 /* ListCell.swift in Sources */,
+				54F7F9212544E1CB0008F778 /* NewItemViewModel.swift in Sources */,
 				54F9985A253B6D4B00349BC6 /* MapViewController.swift in Sources */,
 				54F7F8BF2544BEF80008F778 /* ListViewModel.swift in Sources */,
 				54F9986A253B6DF500349BC6 /* AboutViewController.swift in Sources */,
 				54F998C7253B827800349BC6 /* UIColor+Extensions.swift in Sources */,
 				54F7F8F52544CF220008F778 /* NewItemViewController.swift in Sources */,
 				54F7F8C62544BF320008F778 /* ListViewPresentable.swift in Sources */,
+				54F7F90A2544E0BF0008F778 /* ItemModel.swift in Sources */,
 				54F9985F253B6D9200349BC6 /* SettingsViewController.swift in Sources */,
 				54F99871253B719700349BC6 /* UIView+Extensions.swift in Sources */,
 			);

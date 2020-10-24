@@ -72,7 +72,7 @@ class ListCell: TableViewCell {
         nameLabel.textColor = .black
         nameLabel.font = .preferredFont(forTextStyle: .callout)
         
-        valueLabel.textColor = UIColor(hex: "1E6A13")
+        valueLabel.textColor = Constants.Color.main
         valueLabel.font = .preferredFont(forTextStyle: .headline)
         
         addressLabel.textColor = .lightGray
@@ -84,9 +84,9 @@ class ListCell: TableViewCell {
 
 extension ListCell {
     
-    func set(vm: ListCellViewModel) {
-        nameLabel.text = vm.name
-        valueLabel.text = vm.value
-        addressLabel.text = vm.address
+    func set(item: ItemModel) {
+        nameLabel.text = item.name
+        valueLabel.text = item.value
+        addressLabel.text = item.address
     }
 }

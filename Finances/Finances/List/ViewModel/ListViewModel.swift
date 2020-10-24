@@ -13,7 +13,7 @@ class ListViewModel {
     
     var presenter: ListViewPresentable?
     
-    var data: [ListCellViewModel]
+    var data: [ItemModel]
     
     var numberOfRows: Int {
         data.count
@@ -32,17 +32,20 @@ class ListViewModel {
     }
     
     private func getItems() {
+        data.removeAll()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
         do {
             guard let result = try managedContext.fetch(fetchRequest) as? [NSManagedObject] else { return }
             for data in result  {
-                let name = data.value(forKey: "name") as? String
-                let value = data.value(forKey: "value") as? String
-                let address = data.value(forKey: "address") as? String
-                let vm = ListCellViewModel(name: name, value: value, address: address)
-                self.data.append(vm)
+                if let id = data.value(forKey: ItemEntity.id.rawValue) as? String, !id.isEmpty {
+                    let name = data.value(forKey: ItemEntity.name.rawValue) as? String
+                    let value = data.value(forKey: ItemEntity.value.rawValue) as? String
+                    let address = data.value(forKey: ItemEntity.address.rawValue) as? String
+                    let vm = ItemModel(id: id, name: name, value: value, address: address)
+                    self.data.append(vm)
+                }
             }
             presenter?.reloadData()
         }
@@ -57,8 +60,12 @@ class ListViewModel {
     
     func cellForRow(tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as? ListCell else { return UITableViewCell() }
-        let vm = data[indexPath.row]
-        cell.set(vm: vm)
+        let item = data[indexPath.row]
+        cell.set(item: item)
         return cell
+    }
+    
+    func didSelect(at index: IndexPath) -> ItemModel {
+        data[index.row]
     }
 }

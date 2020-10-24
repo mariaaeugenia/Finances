@@ -27,13 +27,20 @@ class ListViewController: TableViewController {
     }
     
     override func configureViews() {
+        title = "Meus Gastos"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped(_ :)))
         vm.registerCell(for: tableView)
         vm.presenter = self
     }
     
     @objc private func addButtonTapped(_ sender: UIBarButtonItem) {
-        
+        routeToItemRegistration()
+    }
+    
+    private func routeToItemRegistration(with item: ItemModel? = nil) {
+        let vm = NewItemViewModel(with: item)
+        let vc = NewItemViewController(with: vm)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     //MARK: - TABLE VIEW DELEGATE & DATA SOURCE
@@ -47,6 +54,11 @@ class ListViewController: TableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         vm.cellForRow(tableView: tableView, at: indexPath)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = vm.didSelect(at: indexPath)
+        routeToItemRegistration(with: item)
     }
     
 }

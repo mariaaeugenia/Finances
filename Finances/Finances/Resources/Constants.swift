@@ -5,7 +5,7 @@
 //  Created by Maria Eugênia Pereira Teixeira on 17/10/20.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
     
@@ -29,5 +29,9 @@ struct Constants {
             UserDefaults.standard.set(currency, forKey: SettingsBundleKeys.Dollar_Currency)
         }
         
+    }
+    
+    struct Color {
+        static let main = UIColor(hex: "1E6A13")
     }
 }
