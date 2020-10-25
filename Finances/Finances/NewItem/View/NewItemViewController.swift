@@ -13,6 +13,9 @@ class NewItemViewController: ViewController {
     var nameTextField: TextField!
     var valueTextField: TextField!
     var addressTextField: TextField!
+    var dollarStackView: UIStackView!
+    var dollarLabel: UILabel!
+    var dollarSwicth: UISwitch!
     var saveButton: UIButton!
     
     var vm: NewItemViewModel!
@@ -36,14 +39,24 @@ class NewItemViewController: ViewController {
         nameTextField = .init()
         valueTextField = .init()
         addressTextField = .init()
+        dollarStackView = .init()
+        dollarLabel = .init()
+        dollarSwicth = .init()
         saveButton = .init()
     }
     
     override func addViewHierarchy() {
+        
+        dollarStackView.addArrangedSubviews([
+            dollarSwicth,
+            dollarLabel
+        ])
+        
         mainStackView.addArrangedSubviews([
             nameTextField,
             valueTextField,
-            addressTextField
+            addressTextField,
+            dollarStackView
         ])
         
         view.addSubviews([
@@ -70,6 +83,7 @@ class NewItemViewController: ViewController {
         vm.presenter = self
         configureStackView()
         configureTextFields()
+        configureDolarViews()
         configureButton()
     }
     
@@ -82,8 +96,20 @@ class NewItemViewController: ViewController {
     
     private func configureTextFields() {
         nameTextField.placeholder = "Nome do item"
-        valueTextField.placeholder = "R$0,00"
+        valueTextField.placeholder = "0,00"
+        valueTextField.keyboardType = .decimalPad
         addressTextField.placeholder = "Rua 123, 45, Cidade, Estado"
+    }
+    
+    private func configureDolarViews() {
+        dollarStackView.axis = .horizontal
+        dollarStackView.alignment = .center
+        dollarStackView.distribution = .fill
+        dollarStackView.spacing = 5
+        
+        dollarLabel.text = "Valor em dólar?"
+        dollarLabel.font = .preferredFont(forTextStyle: .caption1)
+        dollarLabel.textColor = .black
     }
     
     private func configureButton() {
@@ -95,7 +121,7 @@ class NewItemViewController: ViewController {
     
     @objc private func saveButtonTapped(_ sender: UIButton) {
         view.endEditing(true)
-        vm.save(name: nameTextField.text, value: valueTextField.text, address: addressTextField.text)
+        vm.save(name: nameTextField.text, value: valueTextField.text, address: addressTextField.text, isDollar: dollarSwicth.isOn)
     }
     
 }
@@ -103,8 +129,9 @@ class NewItemViewController: ViewController {
 extension NewItemViewController: NewItemPresentable {
     func load(item: ItemModel) {
         nameTextField.text = item.name
-        valueTextField.text = item.value
+        valueTextField.text = "\(item.value)"
         addressTextField.text = item.address
+        dollarSwicth.isOn = item.isDollar
     }
     
     func showAlert(with title: String, and message: String) {

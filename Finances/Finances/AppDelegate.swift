@@ -20,6 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MainViewController()
         window?.makeKeyAndVisible()
         
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+//            fetchRequest.returnsObjectsAsFaults = false
+//            do {
+//                let results = try persistentContainer.viewContext.fetch(fetchRequest)
+//                for object in results {
+//                    guard let objectData = object as? NSManagedObject else {continue}
+//                    persistentContainer.viewContext.delete(objectData)
+//                }
+//            } catch let error {
+//                print("Detele all data in Item error :", error)
+//            }
+        
         return true
     }
 

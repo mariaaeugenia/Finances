@@ -86,7 +86,7 @@ extension ListCell {
     
     func set(item: ItemModel) {
         nameLabel.text = item.name
-        valueLabel.text = item.value
+        valueLabel.text = item.isDollar ? item.valueDollar : item.valueReal
         addressLabel.text = item.address
     }
 }

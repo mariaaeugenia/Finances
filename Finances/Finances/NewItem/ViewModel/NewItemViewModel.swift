@@ -23,9 +23,9 @@ class NewItemViewModel {
         presenter?.load(item: item)
     }
     
-    func save(name: String?, value: String?, address: String?) {
+    func save(name: String?, value: String?, address: String?, isDollar: Bool = false) {
         guard item == nil else {
-            update(name: name, value: value, address: address)
+            update(name: name, value: value, address: address, isDollar: isDollar)
             return
         }
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -35,8 +35,9 @@ class NewItemViewModel {
         let id = UUID.init().uuidString
         item.setValue(id, forKey: ItemEntity.id.rawValue)
         item.setValue(name, forKeyPath: ItemEntity.name.rawValue)
-        item.setValue(value, forKey: ItemEntity.value.rawValue)
+        item.setValue(value?.getDoubleValue(), forKey: ItemEntity.value.rawValue)
         item.setValue(address, forKey: ItemEntity.address.rawValue)
+        item.setValue(isDollar, forKey: ItemEntity.isDollar.rawValue)
         do {
             try managedContext.save()
             presenter?.showAlert(with: "Alerta", and: "Salvo com sucesso!")
@@ -45,7 +46,7 @@ class NewItemViewModel {
         }
     }
     
-    private func update(name: String?, value: String?, address: String?) {
+    private func update(name: String?, value: String?, address: String?, isDollar: Bool = false) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let id = item?.id, !id.isEmpty else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "Item")
@@ -55,8 +56,9 @@ class NewItemViewModel {
             
             guard let objectUpdate = result.first as? NSManagedObject else { return }
             objectUpdate.setValue(name, forKey: ItemEntity.name.rawValue)
-            objectUpdate.setValue(value, forKey: ItemEntity.value.rawValue)
+            objectUpdate.setValue(value?.getDoubleValue(), forKey: ItemEntity.value.rawValue)
             objectUpdate.setValue(address, forKey: ItemEntity.address.rawValue)
+            objectUpdate.setValue(isDollar, forKey: ItemEntity.isDollar.rawValue)
             do {
                 try managedContext.save()
                 presenter?.showAlert(with: "Sucesso", and: "Item editado sucesso!")

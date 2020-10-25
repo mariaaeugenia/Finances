@@ -12,7 +12,6 @@ import CoreData
 class ListViewModel {
     
     var presenter: ListViewPresentable?
-    
     var data: [ItemModel]
     
     var numberOfRows: Int {
@@ -41,9 +40,10 @@ class ListViewModel {
             for data in result  {
                 if let id = data.value(forKey: ItemEntity.id.rawValue) as? String, !id.isEmpty {
                     let name = data.value(forKey: ItemEntity.name.rawValue) as? String
-                    let value = data.value(forKey: ItemEntity.value.rawValue) as? String
+                    let value = data.value(forKey: ItemEntity.value.rawValue) as? Double ?? 0
                     let address = data.value(forKey: ItemEntity.address.rawValue) as? String
-                    let vm = ItemModel(id: id, name: name, value: value, address: address)
+                    let isDollar = data.value(forKey: ItemEntity.isDollar.rawValue) as? Bool ?? false
+                    let vm = ItemModel(id: id, name: name, value: value, address: address, isDollar: isDollar)
                     self.data.append(vm)
                 }
             }

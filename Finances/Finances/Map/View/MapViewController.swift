@@ -15,6 +15,22 @@ class MapViewController: ViewController {
     var locationManager:CLLocationManager!
     var didGetUserLocation: Bool = false
     
+    var vm: MapViewModel
+    
+    override init() {
+        vm = .init()
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        vm.loadData()
+    }
+    
     override func prepareViews() {
         mapView = .init()
         locationManager = .init()
@@ -33,6 +49,7 @@ class MapViewController: ViewController {
     override func configureViews() {
         mapView.delegate = self
         determineCurrentLocation()
+        vm.presenter = self
     }
     
     
@@ -149,4 +166,20 @@ extension MapViewController: CLLocationManagerDelegate {
         setUserLocation(for: coordinate)
     }
     
+}
+
+extension MapViewController: MapPresentable {
+    func load(_ items: [ItemModel]) {
+        items.forEach { item in
+            let address = item.address
+            let geoCoder = CLGeocoder()
+            geoCoder.geocodeAddressString(address) { (placemarks, error) in
+                guard let placemarks = placemarks, let coordinate = placemarks.first?.location?.coordinate else {
+                    return
+                }
+                let annotation = Annotation(title: item.name, coordinate: coordinate)
+                self.mapView.addAnnotation(annotation)
+            }
+        }
+    }
 }
